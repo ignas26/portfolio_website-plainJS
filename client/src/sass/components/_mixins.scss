@@ -1,0 +1,53 @@
+@mixin text-regular{
+    font-size:14px;
+    color: $color-text;
+}
+@mixin button($color){
+    display: inline-block;
+    line-height:40px;
+    font-size:14px;
+    border:1px solid $color;
+    color: $color;
+    text-transform: uppercase;
+    padding:0 25px;
+    cursor: pointer;
+    user-select: none;
+}
+
+@mixin title{
+    color: $color-blue;
+    font-size:30px;
+    text-transform: uppercase;
+    position: relative;
+    text-align: left;
+    z-index: -1;
+    &:after{
+        position: absolute;
+        content: '';
+        display: inline-block;
+        left:0;
+        bottom:-5px;
+        height:2px;
+        width:60px;
+        background: $color-blue;
+    }
+}
+
+@mixin title-2{
+    color: $color-blue;
+    font-size:30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+@mixin linija {
+    &:after {
+        display:block;
+        content: '';
+        border-bottom: solid 3px #22a7f0;
+        transform: scaleX(0);
+        transition: transform 650ms ease-in-out;
+    }
+    &:hover:after { transform: scaleX(1); }
+}
