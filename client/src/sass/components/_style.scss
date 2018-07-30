@@ -46,26 +46,22 @@ body {
     font-family: Raleway, sans-serif
 }
 
+.clearfix:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
 .container {
     max-width: 1150px;
     padding: 0 25px;
     margin: auto
 }
 
-//section.flex{
-//    display: flex;
-//    flex-wrap: wrap;
-//    flex-direction: row;
-//}
-
-
 section.landing-page {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     height: 100vh;
-    background: url(../../img/back.jpg);
+    background: url(../../img/back.jpeg);
     background-size: cover;
     background-position: center;
     overflow: hidden
@@ -77,14 +73,12 @@ section.landing-page .content {
     position: absolute;
     top: 30%;
     left: 50%;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     text-align: center;
     overflow: hidden
 }
 
 section.landing-page .content:hover h2 {
-    -webkit-transition: 1s;
     transition: 1s;
     opacity: 1
 }
@@ -191,14 +185,13 @@ section.landing-page .content .icon .border_two {
 }
 
 section.landing-page .content h2 {
-    color: #000;
+    color: #ffffff;
     font-size: 65px;
     font-weight: 600;
     position: absolute;
     top: 32%;
     width: 100%;
     opacity: 0;
-    -webkit-transition: 1s;
     transition: 1s
 }
 
@@ -305,6 +298,7 @@ section.content .project .container .img {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+    overflow: hidden;
 }
 
 .contentX {
@@ -346,11 +340,7 @@ section.content .project .container .img {
     top: 50%;
     left: 50%;
     opacity: 0;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
 
@@ -364,7 +354,7 @@ section.content .project .container .img {
     font-family: 'Architects Daughter', cursive;
     color: #fff;
     font-weight: 700;
-    font-size: 34px;
+    font-size: 28px;
     letter-spacing: 0.15em;
     margin-bottom: 0.5em;
     text-transform: uppercase;
@@ -373,7 +363,7 @@ section.content .project .container .img {
 .content-details p{
     font-family: 'Architects Daughter', cursive;
     color: #fff;
-    font-size: 26px;
+    font-size: 24px;
 }
 
 .fadeIn-top{
@@ -441,21 +431,31 @@ section.content .project .container .img {
     background: rgb(34, 167, 240);
     padding: 30px 30px;
     .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         h2 {
             @include title;
+            float: left;
             color: white;
             font-size: 24px;
             z-index: 0;
+            border-bottom: 2px solid whitesmoke;
+        }
+        .button-change{
+            float: right;
+        }
+        .currentLanguage{
+            @include button(#000);
+            float: right;
+            color: white;
+            border-color: white;
+            border-width: 2px;
+            cursor: default;
+            user-select: none;
         }
         .button {
             @include button(#000);
             color: white;
             border-color: white;
             border-width: 2px;
-
         }
     }
 }
@@ -622,4 +622,54 @@ footer {
             font-size: 25px!important;
         }
     }
+}
+
+.about-me{
+    width: 100%;
+}
+
+.about-meDiv{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.about-me .en{
+    font-size: 24px;
+    margin: 35px 0 35px 0;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: 'Architects Daughter',cursive;
+    padding-left: 40px;
+    border-left: 1px solid $color-blue;
+    line-height: 1.6;
+    color: $color-blue;
+}
+
+.about-me .lt{
+    font-size: 24px;
+    margin: 35px 0 35px 0;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: 'Architects Daughter',cursive;
+    display: none;
+    padding-left: 40px;
+    border-left: 2px solid $color-blue;
+    line-height: 1.6;
+    color: $color-blue;
+}
+
+.about-me .en span, .about-me .lt span{
+    font-size: 26px;
+    color: white;
+    background-color: $color-blue;
+}
+
+.about-me .lt .underline{
+    font-size: 26px;
+    color: white;
+}
+
+.trigger{
+    cursor: pointer;
+    user-select: none;
 }
