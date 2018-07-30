@@ -5,6 +5,7 @@ var trigger = document.querySelector(".trigger");
 var closeButton = document.querySelector(".modal .modal-content .close-button");
 var logo = document.querySelector('.landing-page .container .content .icon img');
 var devName = document.querySelector('.landing-page .container .content h2');
+var devNameHidden = document.querySelector('.landing-page .container div h3');
 var english = document.querySelector('.about-me .en');
 var lithuanian = document.querySelector('.about-me .lt');
 var change = document.querySelector('.blueline-2 .container .button-change');
@@ -75,20 +76,25 @@ var catcher = 0;
 var catcherLogo = 0;
 
 
-devName.addEventListener('mouseover', function(e){
+devName.addEventListener('mouseover', function(){
 catcher++;
 devName.style.opacity = 1;
 });
 
 logo.addEventListener('mouseover', function(){
-catcherLogo++;
+  catcherLogo++;
+  devName.style.opacity = 1;
 });
 
 function blink() {
-  if (catcher !== 0 || catcherLogo !== 0) return;
-  logo.style.opacity = ( logo.style.opacity == 1 )? 0 : 1;
-  setTimeout("blink();", 1000);
-}
+  if (catcher !== 0 || catcherLogo !== 0) {
+      devNameHidden.textContent ='A junior web developer from Vilnius, Lithuania';
+      devNameHidden.classList.add('showName');
+    return
+  }
+    logo.style.opacity = (logo.style.opacity == 1) ? 0 : 1;
+    setTimeout("blink();", 1000);
+  }
 
 blink();
 
