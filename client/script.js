@@ -103,7 +103,6 @@ function blink2() {
         "top": 1000
       });
     }, 1000);
-
   });
   setTimeout("blink2();", 850);
 }

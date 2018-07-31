@@ -34,17 +34,18 @@ blockquote:after, blockquote:before, q:after, q:before {
 
 table {
     border-collapse: collapse;
-    border-spacing: 0
+    border-spacing: 0;
 }
 
 a {
     text-decoration: none;
-    color: inherit
+    color: inherit;
 }
 
 body {
     background: #fff;
-    font-family: Raleway, sans-serif
+    font-family: Raleway, sans-serif;
+
 }
 
 .clearfix:after{
@@ -185,7 +186,8 @@ section.content .project .container {
     flex-direction: row;
     justify-content: space-evenly;
     overflow: hidden;
-    margin-top: 40px;
+    padding-top: 40px;
+    background: #ECF1EF;
 }
 
 .contentX {
