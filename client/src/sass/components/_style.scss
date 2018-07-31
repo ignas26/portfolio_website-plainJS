@@ -15,7 +15,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body {
-    line-height: 1
+    line-height: 1;
+    scroll-behavior: smooth;
 }
 
 ol, ul {
@@ -89,7 +90,7 @@ section.landing-page .content h1 {
     color: indianred;
     font-weight: 700;
     letter-spacing: 9px;
-    position: relative
+    position: relative;
 }
 
 
@@ -104,8 +105,8 @@ section.landing-page .content .icon {
 }
 
 section.landing-page .content .icon img {
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 85px;
     margin: auto;
     opacity: 1;
 }
@@ -126,19 +127,16 @@ section.landing-page .content .icon .border_two {
     transform: translateY(25px)
 }
 
-
-
-
-
 section.landing-page .content h2 {
     color: #ffffff;
-    font-size: 65px;
+    font-size: 50px;
     font-weight: 600;
     position: absolute;
-    top: 32%;
-    width: 100%;
+    top: 27%;
+    right: 36%;
+    width: 28%;
     opacity: 0;
-    transition: 1s
+    transition: 1s;
 }
 
 section.content {
@@ -485,7 +483,7 @@ footer {
     text-justify: inter-word;
     font-family: 'Architects Daughter',cursive;
     padding-left: 40px;
-    border-left: 1px solid $color-blue;
+    border-left: 2px solid $color-blue;
     line-height: 1.6;
     color: $color-blue;
 }
@@ -590,18 +588,25 @@ footer {
     }
 }
 
+@media (max-width: 1200px) {
+    section.landing-page .content .icon img {
+        margin-top: 45px;
+    }
+}
 
 @media (max-width: 900px) {
     section.landing-page .content .icon img {
         width: 40px;
         height: 40px;
+        margin-top: 45px;
     }
 }
 
 @media (max-width: 600px) {
     section.landing-page .content .icon img {
         width: 30px;
-        height: 30px
+        height: 30px;
+        margin-top: 45px;
     }
 }
 
@@ -646,7 +651,7 @@ footer {
 @media (max-width: 1200px) {
     section.content .project .container .img {
         width: 480px;
-        height: 230px
+        height: 230px;
     }
 }
 
@@ -659,14 +664,33 @@ footer {
 }
 
 @media (max-width: 900px) {
+    font-size: 42px;
+    font-weight: 600;
+    position: absolute;
+    top: 27%;
+    right: 36%;
+    width: 28%;
+    opacity: 0;
+    transition: 1s;
+}
+
+
+@media (max-width: 900px) {
     section.landing-page .content h2 {
-        font-size: 40px
+        font-size: 42px;
+        font-weight: 600;
+        position: absolute;
+        top: 27%;
+        right: 36%;
+        width: 28%;
+        opacity: 0;
+        transition: 1s;
     }
 }
 
 @media (max-width: 600px) {
     section.landing-page .content h2 {
-        font-size: 25px
+        font-size: 38px;
     }
 }
 

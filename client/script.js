@@ -11,6 +11,7 @@ var lithuanian = document.querySelector('.about-me .lt');
 var change = document.querySelector('.blueline-2 .container .button-change');
 var current = document.querySelector('.blueline-2 .container .currentLanguage');
 var aboutMe = document.querySelector('.blueline-2 .container h2');
+var sound = new Audio('/assets/space.mp3');
 
 var languages=[1];
 
@@ -86,17 +87,46 @@ logo.addEventListener('mouseover', function(){
   devName.style.opacity = 1;
 });
 
+function blink2() {
+  var height = logo.style.height = '100px';
+  if (height) {
+    logo.style.opacity = (logo.style.opacity == 1) ? 0 : 1;
+    logo.style.cursor = 'pointer';
+  }
+  logo.addEventListener('click', function(){
+    sound.play();
+
+    setTimeout(function(){
+      window.scrollBy({
+        "behavior": "smooth",
+        "left": 0,
+        "top": 1000
+      });
+    }, 1000);
+
+  });
+  setTimeout("blink2();", 850);
+}
+
+function cursor(){
+ logo.src= `img/cursor.png`;
+ logo.style.opacity = 1;
+ blink2();
+}
+
 function blink() {
   if (catcher !== 0 || catcherLogo !== 0) {
       devNameHidden.textContent ='A junior web developer from Vilnius, Lithuania';
       devNameHidden.classList.add('showName');
-    return
+      cursor();
+      return
   }
     logo.style.opacity = (logo.style.opacity == 1) ? 0 : 1;
     setTimeout("blink();", 1000);
   }
 
 blink();
+
 
 
 
