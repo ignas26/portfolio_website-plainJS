@@ -409,6 +409,7 @@ footer {
             text-align: left;
             transition: .4s;
             margin-bottom: 15px;
+            cursor: pointer;
             &:before {
                 display: inline-block;
                 margin-right: 5px;
@@ -425,16 +426,28 @@ footer {
                 animation-fill-mode: forwards;
             }
         }
-        .address:before {
-
+        .address::before {
+            content: '\f3c5';
+            font-family:'fontAwesome';
+            color: $color-blue;
             opacity: 1;
         }
         .mobile:before {
-
+            content: '\f10b';
+            font-family:'fontAwesome';
+            color: $color-blue;
             opacity: 1;
         }
         .email:before {
-
+            content: '\f1fa';
+            font-family:'fontAwesome';
+            color: $color-blue;
+            opacity: 1;
+        }
+        .github:before {
+            content: '\f09b';
+            font-family:'fontAwesome';
+            color: $color-blue;
             opacity: 1;
         }
         p {
