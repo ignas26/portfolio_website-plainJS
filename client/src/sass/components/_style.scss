@@ -450,6 +450,12 @@ footer {
             color: $color-blue;
             opacity: 1;
         }
+        .linkedin:before {
+            content: '\f08c';
+            font-family:'fontAwesome';
+            color: $color-blue;
+            opacity: 1;
+        }
         p {
             @include text-regular;
             color: #fff;
